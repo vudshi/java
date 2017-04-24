@@ -48,7 +48,7 @@ public class M1Class1 {
 
         System.out.print("For :");
         for (i = liBound; i * liDirection<= liABound; i += liStep){
-            System.out.print(String.format("%d,", i);
+            System.out.print(String.format("%d,", i));
         }
 
         i = liBound;
