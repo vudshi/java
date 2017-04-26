@@ -54,12 +54,12 @@ public class lesson {
         result = frst + scnd;
         return result;
     }
-    public static int sum(int...  numbers) {
+/*    public static int sum(int...  numbers) {
         System.out.println("v");
         int result;
         result = numbers[0] + numbers[1];
         return result;
-    }
+    }*/
     public static float avg(float[] ar) {
         float result = 0;
 
@@ -69,12 +69,12 @@ public class lesson {
         return result / ar.length;
     }
     //метод который принимает float boolean string varargs возвращает string
-    public static String concat(float pf, boolean bl, String str, int...  numbers) {
+  /*  public static String concat(float pf, boolean bl, String str, int...  numbers) {
         String result;
         result = "" + pf + bl + str;
         for(int i = 0; i < numbers.length; i++) result += numbers[i];
         return result;
-    }
+    }*/
     //метод который принимает int x и массив int of 5 увеличавает x на 1 и в массиве не четные индексы на 1. Инициализация в
     //  main. Два раза вызвать метод и вывод чисел в main провеить что изменилось.
     public static void inc(int in, int[] ar) {
