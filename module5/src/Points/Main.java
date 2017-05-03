@@ -1,7 +1,5 @@
 package Points;
 
-import Points_v2.QuadraticEquation;
-
 /**
  * Created by lsm on 5/1/2017.
  */

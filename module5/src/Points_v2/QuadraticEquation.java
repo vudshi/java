@@ -1,7 +1,5 @@
 package Points_v2;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 /**
  * Created by lsm on 5/1/2017.
  */
