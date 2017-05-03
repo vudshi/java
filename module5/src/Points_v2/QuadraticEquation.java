@@ -29,9 +29,9 @@ public class QuadraticEquation {
     private void CalculateX(){
         CalculateD();
         if (D >= 0) {
-          this.x1 = (-b + D) / (2 * a);
+          this.x1 = (-b + Math.sqrt(D)) / (2 * a);
           if (D > 0) {
-              this.x2 = (-b - D) / (2 * a);
+              this.x2 = (-b - Math.sqrt(D)) / (2 * a);
           } else {
               this.x2 = this.x1;
           }
