@@ -12,15 +12,38 @@ package University;
  */
 public class Student {
     private int id;
-    private String stName, stSurname, stFathername, stAbout, stAdditional;
+    private String stName, stSurname, stFathername, stAdditional;
     private User user;
 
-
-    public Student(String stName, String stSurname, String stFathername, String stAbout, String stAdditional) {
-        this.stName = stName;
-        this.stSurname = stSurname;
-        this.stFathername = stFathername;
-        this.stAbout = stAbout;
-        this.stAdditional = stAdditional;
+    public Student(String stName, String stSurname, String stFathername, String stAdditional, User user) {
+         this.stName = stName;
+         this.stSurname = stSurname;
+         this.stFathername = stFathername;
+         this.stAdditional = stAdditional;
+         this.user = user;
     }
-}
+
+     public int getId() {
+         return id;
+     }
+
+     public String getStName() {
+         return stName;
+     }
+
+     public String getStSurname() {
+         return stSurname;
+     }
+
+     public String getStFathername() {
+         return stFathername;
+     }
+
+     public String getStAdditional() {
+         return stAdditional;
+     }
+
+     public User getUser() {
+         return user;
+     }
+ }
