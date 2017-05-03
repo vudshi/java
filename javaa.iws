@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f4ea64d-e808-47de-bcce-9f130a4d492b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module5/src/University/Constants.java" />
-      <change type="DELETED" beforePath="D:\prtbl\IntelliJ IDEA IC Portable\Java\javaa\javaa\module51\module51.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module5/src/University/Error.java" afterPath="$PROJECT_DIR$/module5/src/University/Error.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module5/src/University/Errors.java" afterPath="$PROJECT_DIR$/module5/src/University/Errors.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaa.iws" afterPath="$PROJECT_DIR$/javaa.iws" />
-    </list>
+    <list default="true" id="1f4ea64d-e808-47de-bcce-9f130a4d492b" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +48,8 @@
       <file leaf-file-name="Error.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module5/src/University/Error.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.14003295" vertical-offset="204" max-vertical-offset="1530">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.47611204" vertical-offset="204" max-vertical-offset="1530">
+              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
               <folding>
                 <element signature="e#1664#1665#0" expanded="true" />
                 <element signature="e#1694#1695#0" expanded="true" />
@@ -690,7 +684,11 @@
       <created>1493807542662</created>
       <updated>1493807542662</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="20170503">
+      <created>1493811716957</created>
+      <updated>1493811716957</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -719,7 +717,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842106" sideWeight="0.49786097" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19893049" sideWeight="0.49636552" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19893049" sideWeight="0.49636552" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1174,8 +1172,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module5/src/University/Error.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.14003295" vertical-offset="204" max-vertical-offset="1530">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.47611204" vertical-offset="204" max-vertical-offset="1530">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding>
             <element signature="e#1664#1665#0" expanded="true" />
             <element signature="e#1694#1695#0" expanded="true" />
