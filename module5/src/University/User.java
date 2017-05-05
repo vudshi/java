@@ -17,5 +17,29 @@ public class User {
         this.email = email;
     }
 
+    public String getLogin() {
+        return login;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public Date getRegistered() {
+        return registered;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", email='" + email + '\'' +
+                ", enabled=" + enabled +
+                ", registered=" + registered +
+                '}';
+    }
 }

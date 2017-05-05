@@ -4,41 +4,33 @@ package University;
  * Created by lsm on 03.05.2017.
  */
 public class Error {
-    private Constants constants;
+    
     private int errCode;
-    private byte classOwner;
+    private byte owner;
     private String description;
 
-    public Error(Constants constants) {
-        if (this.constants != constants) {
-            this.constants = constants;
-        }
-    }
-
-    public void SetError(int errCode, byte classOwner, String description) {
-        if (this.constants != null) {
-            if (CheckErrCode(errCode, classOwner) != this.constants.defValError) {
+    public void SetError(int errCode, byte owner, String description) {
+    if (CheckErrCode(errCode, owner) != Constants.defValError) {
                 this.errCode = errCode;
             }
-            this.classOwner = classOwner;
+            this.owner = owner;
             this.description = description;
-        }
     }
 
-    private int CheckClassOwner(int pClassOwner) {
+    private int Checkowner(int powner) {
         int result;
-        if (pClassOwner >= this.constants.minClassOwner & pClassOwner <= this.constants.maxClassOwner){
-            result = pClassOwner;
+        if (powner >= Constants.minOwner & powner <= Constants.maxOwner){
+            result = powner;
         } else {
-            result = this.constants.defValError;
+            result = Constants.defValError;
         }
         return result;
     }
 
-    private int CheckErrCode(int pErrCode, int classOwner) {
-        int result = this.constants.defValError;
-        if (CheckClassOwner(classOwner) != this.constants.defValError) {
-            if (pErrCode >= this.constants.minErrorCode * classOwner & pErrCode <= this.constants.maxErrorCode) {
+    private int CheckErrCode(int pErrCode, int owner) {
+        int result = Constants.defValError;
+        if (Checkowner(owner) != Constants.defValError) {
+            if (pErrCode >= Constants.minErrorCode * owner & pErrCode <= Constants.maxErrorCode) {
                 result = pErrCode;
             }
         }
@@ -47,7 +39,7 @@ public class Error {
 
     public boolean isNull() {
         boolean result = false;
-        if (this.errCode == constants.ZERO & this.getClassOwner() == constants.ZERO & this.description == "") {
+        if (this.errCode == Constants.ZERO && this.getowner() == Constants.ZERO && this.description == "") {
             result = true;
         }
     return result;
@@ -57,8 +49,8 @@ public class Error {
         return errCode;
     }
 
-    public byte getClassOwner() {
-        return classOwner;
+    public byte getowner() {
+        return owner;
     }
 
     public String getDescription() {
@@ -66,18 +58,18 @@ public class Error {
     }
 
     public int getMaxErrorCode() {
-        return constants.maxErrorCode;
+        return Constants.maxErrorCode;
     }
 
     public int getMinErrorCode() {
-        return this.constants.minErrorCode * this.classOwner;
+        return Constants.minErrorCode * this.owner;
     }
 
     @Override
     public String toString() {
         return "Error{" +
                 "errCode=" + errCode +
-                ", classOwner=" + classOwner +
+                ", owner=" + owner +
                 ", description='" + description + '\'' +
                 '}';
     }
