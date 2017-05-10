@@ -123,7 +123,9 @@ public class Calc {
             while (scnd <= frst) {
                 i = inc(i);
                 frst = sub(frst, scnd);
+
             }
+
         result = (md == ONE) ? i : frst;
         }
         return result;
