@@ -48,7 +48,7 @@ public class Loops {
         //System.out.println(String.format("%d %d %d", liBound, liABound, liDirection));
 
         System.out.print("For :");
-        for (i = liBound; i * liDirection<= liABound; i += liStep){
+        for (i = liBound; i * liDirection <= liABound; i += liStep) {
             System.out.print(String.format("%d,", i));
         }
 
