@@ -3,7 +3,7 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <excludeFromCompile>
-      <file url="file://$PROJECT_DIR$/module3/src/org/pkg/lesson.java" />
+      <file url="file://$PROJECT_DIR$/module3/src/org/pkg/Lesson3.java" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
@@ -158,9 +158,17 @@
   <component name="ProjectCodeStyleSettingsManager">
     <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="nour_d">
+      <words>
+        <w>somthing</w>
+      </words>
+    </dictionary>
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/javaa.iml" filepath="$PROJECT_DIR$/javaa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module0/module0.iml" filepath="$PROJECT_DIR$/module0/module0.iml" />
       <module fileurl="file://$PROJECT_DIR$/module1/module1.iml" filepath="$PROJECT_DIR$/module1/module1.iml" />
       <module fileurl="file://$PROJECT_DIR$/module2/module2.iml" filepath="$PROJECT_DIR$/module2/module2.iml" />
       <module fileurl="file://$PROJECT_DIR$/module3/module3.iml" filepath="$PROJECT_DIR$/module3/module3.iml" />

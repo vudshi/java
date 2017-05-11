@@ -5,6 +5,8 @@ package org.path;
  */
 public class StringBuilderDemo {
     public static void main(String[] args) {
+        //StringBulder
+        //StringBuffer
         StringBuilder  builder = new StringBuilder();
         // + build string here;
         builder.append("abc").append(123).append(true).delete(1, 3);

@@ -42,11 +42,11 @@ public class Main {
         box = new MaxBox();
 
         box.setBox(-30);
-        //System.out.println(box.getBox()); //0
+        System.out.println(box.getBox()); //0
         box.setBox(10);
         box.setBox(150);
         box.setBox(70);
-        //System.out.println(box.getBox()); //150
+        System.out.println(box.getBox()); //150
 
     }
 

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * Created by lsm on 4/24/2017.
  */
-public class M1Class1 {
+public class Loops {
     public static void main(String[] args) throws Exception{
         final String INTRO_GET_VALUES = "Enter 3 number (Borders and step)";
         final String PATTERN = "-?\\d+";

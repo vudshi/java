@@ -6,7 +6,7 @@ import java.util.Collections;
 /**
  * Created by lsm on 4/24/2017.
  */
-public class lesson {
+public class Lesson3 {
     public static void main(String[] args) {
         String[] laArrayY = null;
         String[] laArrayU = null;
@@ -44,7 +44,7 @@ public class lesson {
             case '%': result = frst % scnd;
             default : result = 0;
             break;
-        };
+        }
         return result;
     }
 

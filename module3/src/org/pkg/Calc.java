@@ -22,23 +22,23 @@ public class Calc {
         int result = ONE;
         switch (op) {
             case '+': {result = sum(frst, scnd);
-                       break;
-                      }
+                break;
+            }
             case '*': {result = mult(frst, scnd);
-                       break;
-                      }
+                break;
+            }
             case '-': {result = sub(frst, scnd);
-                       break;
-                      }
+                break;
+            }
             case '/': {result = div(frst, scnd);
-                       break;
-                      }
+                break;
+            }
             case '%': {result = mod(frst, scnd);
-                       break;
-                      }
+                break;
+            }
             default : {result = 0;
-                       break;
-                      }
+                break;
+            }
         }
         return result;
     }
@@ -108,11 +108,13 @@ public class Calc {
     public static int mod(int frst, int scnd) {
         int s = ONE;
         return mult(div(frst, scnd, ZERO), sign(frst));
-     }
+    }
 
     public static int div(int frst, int scnd) {
         int result = ZERO;
-        return  mult(div(frst, scnd, ONE), (sum(sign(frst), sign(scnd)) == ZERO) ? NOT_ZERO : ONE);
+        return  mult(div(frst, scnd, ONE),
+                (sum(sign(frst), sign(scnd)) == ZERO) ? NOT_ZERO : ONE
+        );
     }
     public static int div(int frst, int scnd, int md) {
         int i = ZERO, result = ZERO;
@@ -126,7 +128,7 @@ public class Calc {
 
             }
 
-        result = (md == ONE) ? i : frst;
+            result = (md == ONE) ? i : frst;
         }
         return result;
     }
