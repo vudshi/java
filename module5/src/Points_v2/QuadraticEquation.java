@@ -7,7 +7,7 @@ package Points_v2;
 
 public class QuadraticEquation {
     private int a, b, c;
-    private static double D;
+    private static double D = -1D;
     private InputData i;
     public static double x1, x2;
 
@@ -17,28 +17,34 @@ public class QuadraticEquation {
             this.a = a;
             this.b = b;
             this.c = c;
-        } else {printBadInputData();
+        } else {
+            printBadInputData();
         }
     }
-    private void printBadInputData () {
+
+    private void printBadInputData() {
         System.out.println(i.toString());
     }
-    private void CalculateD(){
-      D = b * b - 4 * a * c;
-    }
-    private void CalculateX(){
-        CalculateD();
-        if (D >= 0) {
-          this.x1 = (-b + Math.sqrt(D)) / (2 * a);
-          if (D > 0) {
-              this.x2 = (-b - Math.sqrt(D)) / (2 * a);
-          } else {
-              this.x2 = this.x1;
-          }
-      }
+
+    private void CalculateD() {
+        D = b * b - 4 * a * c;
     }
 
-    public void CalculateEquation(){
+    private void CalculateX() {
+
+        CalculateD();
+        switch ((D > 0) ? 0 : (D < 0) ? -1 : 1) {
+            case 0:
+                this.x1 = (-b - Math.sqrt(D)) / (2 * a);
+            case 1:
+                this.x2 = (-b + Math.sqrt(D)) / (2 * a);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void CalculateEquation() {
         this.CalculateX();
     }
 
@@ -71,6 +77,8 @@ public class QuadraticEquation {
         ResultData r = new ResultData();
         if (i.isResult()) {
             return r.formatResult(this);
-        } else {return i.toString();}
+        } else {
+            return i.toString();
+        }
     }
 }
