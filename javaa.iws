@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f4ea64d-e808-47de-bcce-9f130a4d492b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaa.ipr" afterPath="$PROJECT_DIR$/javaa.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaa.iws" afterPath="$PROJECT_DIR$/javaa.iws" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -621,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494515818782</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="20170513">
+      <created>1494647479266</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1494647479266</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -770,7 +776,8 @@
     <MESSAGE value="20170511" />
     <MESSAGE value="20170512" />
     <MESSAGE value="20170512.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="20170512.2" />
+    <MESSAGE value="20170513" />
+    <option name="LAST_COMMIT_MESSAGE" value="20170513" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1113,6 +1120,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
