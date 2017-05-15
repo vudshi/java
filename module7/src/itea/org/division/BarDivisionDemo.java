@@ -1,7 +1,6 @@
 package itea.org.division;
 
-import java.lang.reflect.Array;
-
+import static itea.org.division.Utils.*;
 import static itea.org.division.BarDivision.*;
 
 /**
@@ -10,107 +9,61 @@ import static itea.org.division.BarDivision.*;
 public class BarDivisionDemo {
     public static void main(String[] args) {
 
-        String str = "354654", divider = "359", dmtr = "|", sub = "-", line;
-        byte dividend = 0, dummy, div = (byte) Integer.parseInt(divider), mult = 0, pmult;
+        String str = "33465489", divider = "2", dmtr = "|", sub = "-";
+        int dividend = 0, div = Integer.parseInt(divider), result = 0;
+        int dummy, mult;
         int[] digitArray = new int[str.length()];
-        int result = 0;
+
+        byte shift = 0;
         LinkedItemList itemList = new LinkedItemList();
+        Item item = new Item(0, 0, 0);
+        boolean format = false;
 
         BarDivision.getNumberAsArray(str, digitArray);
         for (byte i = 0; i < digitArray.length; i++) {
-            dividend = (byte) (dividend * 10 + digitArray[i]);
-            if (dividend >= div) {
-                if (itemList.length() == 0) {
-                    line = String.format("\033[0m%s%s\033[0;4m%s\033[0m", " " + str, dmtr, divider);
-                } else {
-                    line = "";
-                }
-
-                mult = (byte) getMultiplier(dividend, div);
-                dummy = (byte) (dividend - div * mult);
-                dummy = (dummy == 0) ? 0 : dummy;
-                addNewListItem(itemList, dividend, dummy, (byte) (div * mult));
-                BarDivision.rollupCalcResult(mult);
-                dividend = dummy;
+            dividend = dividend * 10 + digitArray[i];
+            mult = getMultiplier(dividend, div);
+            dummy = dividend - div * mult;
+            dummy = (dummy == 0) ? 0 : dummy;
+            if (mult > 0) {
+                itemList.add(new Item(dividend, dummy, (div * mult)));
             }
+            BarDivision.rollupCalcResult(mult);
+            dividend = dummy;
         }
         System.out.println(itemList);
-        System.out.println(BarDivision.getMultiplier(37, 5));
         System.out.println();
+        item = itemList.getItem(1);
 
-
-        System.out.println("************");
-        System.out.println(String.format("\033[0m%s%s\033[0;4m%s\033[0m", " " + str, dmtr, pad(div, length(BarDivision.getCalcResult()))));
-        System.out.println(String.format("\033[4m%s\033[0m%s%d",
-                -itemList.getItem(1).getMult(), pad("", (str.length() - length(itemList.getItem(1).getMult())), ' ') + dmtr,
-                BarDivision.getCalcResult()));
-        pmult = (byte) (length(itemList.getItem(1).getMult()));
-
-        if (itemList.getItem(1).getDiff() == 0) {
-            pmult = (byte) (pmult + 1);
+        //print header and first item
+        if (format) {
+            System.out.println(String.format("\033[0m%s%s\033[0;4m%s\033[0m", " " + str, dmtr, pad(div, length(BarDivision.getCalcResult()) + 1)));
+            System.out.println(String.format("\033[4m%s\033[0m%s%d",
+                    -itemList.getItem(1).getMult(), pad("", (str.length() - length(itemList.getItem(1).getMult())), ' ') + dmtr,
+                    BarDivision.getCalcResult()));
+        } else {
+            System.out.println(String.format("%s%s%s", " " + str, dmtr, divider));
+            System.out.println(String.format("%s", pad(str.length() + 1) + pad(sub, length(BarDivision.getCalcResult()) + 1, sub.charAt(0))));
+            System.out.println(String.format("%s%s%s", " " + item.getStringValue(), pad(str.length() - length(item.getValue())) + dmtr, BarDivision.getCalcResult()));
+            System.out.println(String.format("%s", sub + item.getStringMult()));
+            System.out.println(pad(1) + pad("-", length(item.getMult()), '-'));
         }
-
+        shift = (byte) ((item.getDiff() == 0) ? 0 : -1);
+        //print all other items
         for (int i = 2; i <= itemList.length(); i++) {
-            System.out.println(String.format("%s\033[0m%d\033[0m", pad("", -pmult, ' '), itemList.getItem(i).getValue()));
-            System.out.println(String.format("%s\033[4m%s\033[0m", pad("", -pmult + 1, ' '),
-                    pad(-itemList.getItem(i).getMult(),
-                            -length(itemList.getItem(i).getValue()) - 1)
-                    )
-            );
-
-            pmult = (byte) (pmult + length(itemList.getItem(i).getMult()) - 1);
-            if (itemList.getItem(i).getDiff() == 0) {
-                pmult = (byte) (pmult + 1);
+            item = itemList.getItem(i);
+            System.out.print(item.getItemRow(i - 1 + length(item.getDiff()), sub.charAt(0), format));
+            if (!format) {
+                System.out.println(pad(i + length(item.getDiff()) + shift) + pad(sub, length(item.getMult()), sub.charAt(0)));
             }
+            shift = (byte) ((item.getDiff() == 0) ? 0 : -1);
 
         }
-        System.out.println(String.format("\033[0m%s%d", pad("", -pmult + 1, ' '), itemList.getItem(itemList.length()).getDiff()));
-        System.out.println("************");
-
-
-        System.out.println("result " + BarDivision.getCalcResult());
-        System.out.println();
-        System.out.println(pad(-100, -4));
-        System.out.println(String.format("%s%s%s", str, dmtr, divider));
-        System.out.println(Character.toString((char) 175));
-        System.out.println("second word is \033[0;4m" + "aaaa");
-    }
-
-
-    static void addNewListItem(LinkedItemList list, byte value, byte diff, byte mult) {
-        Item item = new Item(value, diff, mult);
-        list.add(item);
-    }
-
-
-    public static String pad(String str, int size, char padChar) {
-        StringBuffer padded = new StringBuffer("");
-        while (str.length() + padded.length() < Math.abs(size)) {
-            padded.append(padChar);
+        //print last item difference
+        if (format) {
+            System.out.println(String.format("\033[0m%s%d", pad(itemList.length() + shift), item.getDiff()));
+        } else {
+            System.out.println(String.format("%s%d", pad(itemList.length() + length(item.getDiff())), item.getDiff()));
         }
-        return (size >= 0) ? str + padded.toString() : padded.toString() + str;
-    }
-
-    public static String pad(int val, int size) {
-        return pad("" + val, size, ' ');
-    }
-
-    public static String pad(byte val, byte size) {
-
-        return pad((int) val, (int) size);
-    }
-
-    public static int length(int val) {
-        int result = 0;
-        while (val > 0) {
-            val = val / 10;
-            result++;
-        }
-
-        return result;
-    }
-
-    public static int length(byte val) {
-        return length((int) val);
     }
 }
