@@ -4,16 +4,16 @@ package itea.org.division;
  * Created by lsm on 13.05.2017.
  */
 public class LinkedItemList {
-    private static InternalItem top;
+    private static InternalItem first;
     private static int length = 0;
 
     public LinkedItemList() {
-        this.top = null;
+        this.first = null;
     }
 
-    private void addFirst(InternalItem newItem) {
-        top = newItem;
-        top.idx = ++length;
+    private void setFirst(InternalItem newItem) {
+        this.first = newItem;
+        this.first.idx = ++this.length;
     }
 
     private InternalItem getItem(InternalItem item, int idx) {
@@ -21,11 +21,12 @@ public class LinkedItemList {
     }
 
     private void addInternal(InternalItem newItem) {
-        InternalItem dummy = this.top;
-        if (dummy == null) {
-            addFirst(newItem);
+        InternalItem dummy = newItem;
+
+        if (this.first == null) {
+            setFirst(dummy);
         } else {
-            dummy = getItem(dummy, this.length);
+            dummy = getItem(this.first, this.length);
             dummy.next = newItem;
             dummy.idx = ++this.length;
         }
@@ -37,15 +38,15 @@ public class LinkedItemList {
     }
 
     public Item getFirst() {
-        return top.item;
+        return first.item;
     }
 
     public Item getLast() {
-        return getItem(this.top, this.length).item;
+        return getItem(this.first, this.length()).item;
     }
 
     public Item getItem(int idx) {
-        return getItem(this.top, idx).item;
+        return getItem(this.first, idx).item;
     }
 
     public int length() {
@@ -64,7 +65,7 @@ public class LinkedItemList {
 
     @Override
     public String toString() {
-        return "LinkedItemList{" + toString(top) +
+        return "LinkedItemList{" + toString(first) +
                 '}';
     }
 
