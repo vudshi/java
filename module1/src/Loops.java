@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * Created by lsm on 4/24/2017.
  */
 public class Loops {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         final String INTRO_GET_VALUES = "Enter 3 number (Borders and step)";
         final String PATTERN = "-?\\d+";
         int liBound, liABound, liStep, liDirection;
@@ -25,7 +25,7 @@ public class Loops {
 
         while (i <= laArr.length && m.find()) {
             laArr[i] = Integer.parseInt(m.group(0));
-            liDummy=liDummy + m.end(0);
+            liDummy = liDummy + m.end(0);
             i++;
         }
 
@@ -38,7 +38,7 @@ public class Loops {
 
         if ((liBound > liABound && liDirection > 0) ||
                 (liBound < liABound && liDirection < 0)
-                ){
+                ) {
             liBound = liBound + liABound;
             liABound = liBound - liABound;
             liBound = liBound - liABound;

@@ -7,7 +7,7 @@ package itea.org.SuperclassInstantionOrder.b;
 public class Demo {
     public static void greet(Class clazz) {
         Class dummy = clazz;
-        if (dummy.getSuperclass()!= null) {
+        if (dummy.getSuperclass() != null) {
             if (!dummy.getSimpleName().equals(dummy.getSuperclass().getSimpleName())) {
                 greet(clazz.getSuperclass());
                 System.out.print(dummy.getSimpleName());
@@ -16,6 +16,7 @@ public class Demo {
             }
         }
     }
+
     public static void greet(Class clazz, Class owner, char lBdr, char rBdr) {
         Class dummy = clazz;
         if (!dummy.getSuperclass().getSimpleName().equals(Object.class.getSimpleName())) {

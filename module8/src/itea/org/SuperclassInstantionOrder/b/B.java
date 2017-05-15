@@ -7,6 +7,7 @@ public class B extends A {
     public B() {
         Demo.greet(this.getClass());
     }
+
     public B(char lBdr, char rBdr) {
         Demo.greet(this.getClass(), this.getClass().getSuperclass(), lBdr, rBdr);
     }
