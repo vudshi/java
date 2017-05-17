@@ -21,7 +21,6 @@ public class BarDivision {
         return mult;
     }
 
-
     public static void rollupCalcResult(int val) {
         calcResult = calcResult * 10 + val;
     }
